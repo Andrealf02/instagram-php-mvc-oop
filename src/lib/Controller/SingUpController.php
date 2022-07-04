@@ -1,5 +1,5 @@
 <?php
-namespace Andrea\instagram\lib;
+namespace Andrea\instagram\Controller;
 
 class SingUp extends Controller{
     public function __construct(){
