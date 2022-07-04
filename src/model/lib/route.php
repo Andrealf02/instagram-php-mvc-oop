@@ -1,9 +1,14 @@
 <?php
 
 $router = new \Bramus\Router\Router();
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../config/');
+$dotenv->load();
+
 session_start();
 $router->get('/', function(){
     echo "Inicio";
+    
 });
 $router->get('/login', function(){
     echo "Login";

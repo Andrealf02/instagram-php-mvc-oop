@@ -1,0 +1,36 @@
+<?php
+namespace Andrea\instagram\lib;
+use PDO;
+use PDOException;
+
+class Database{
+    private string $host;
+    private string $db;
+    private string $user;
+    private string $pass;
+    private string $charset;
+
+    public function __construct(){
+        try{
+            $con = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;
+            $option = [
+                PDO::ATTR_ERRMODE               => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES      =>fallse,
+
+            ];
+
+            $pdo = new PDO(
+                $conenction,
+                $this->user,
+                $this->pass,
+                $option
+            );
+            return $pdo;
+
+        }catch(PDOEXception $e){
+            throw $e;
+        }
+    }
+    
+}
+
