@@ -1,0 +1,16 @@
+{
+    "name": "andrea/instagram-php",
+    "autoload": {
+        "psr-4": {
+            "Andrea\\InstagramPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alf"
+        }
+    ],
+    "require": {
+        "bramus/router": "1.6"
+    }
+}
