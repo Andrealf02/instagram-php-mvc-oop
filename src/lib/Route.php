@@ -17,7 +17,8 @@ $router->post('/auth', function(){
     echo "Inicio";
 });
 $router->get('/signup', function(){
-    echo "Inicio";
+    $controller = new SignUp;
+    $controller->render('../Signup/index');
 });
 $router->post('/register', function(){
     echo "Inicio";

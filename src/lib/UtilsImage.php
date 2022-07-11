@@ -19,7 +19,7 @@ class UtilImage{
         }
         
         if($uploadOk == 0) {
-            throw new ExceptioN('NO SE SUBIO LA IMG');
+            throw new Exception('NO SE SUBIO LA IMG');
         }else{
             if(move_uploaded_file($photo["tmp_name"], $target_file)){
                 return $hash;
