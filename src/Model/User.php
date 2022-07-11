@@ -1,8 +1,7 @@
 <?php
 namespace Andrea\instagram\Model;
 
-use Andrea\instagram\lib\Controller;
-use Andrea\instagram\lib\UtilImage;
+use Andrea\instagram\Model;
 
 use PDO;
 USE PDOException;
@@ -44,5 +43,12 @@ class User extends Model{
         //algoritmo para conseguir optener el hash
         //tener en cuenta que cuanto mayor sea el numero del 'cost' las veces que aplique el algoritmo sobre el pass
         return password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+    public function setId($value){
+         $this->id = $value;
     }
 }

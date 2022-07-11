@@ -1,5 +1,8 @@
 <?php
 namespace Andrea\instagram\Controller;
+use Andrea\instagram\lib\Controller;
+use Andrea\instagram\lib\UtilImage;
+use Andrea\instagram\lib\Model\User;
 
 class SingUp extends Controller{
     public function __construct(){
