@@ -15,12 +15,12 @@ class Database{
             $con = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;
             $option = [
                 PDO::ATTR_ERRMODE               => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_EMULATE_PREPARES      =>fallse,
+                PDO::ATTR_EMULATE_PREPARES      =>false,
 
             ];
 
             $pdo = new PDO(
-                $conenction,
+                $connection,
                 $this->user,
                 $this->pass,
                 $option

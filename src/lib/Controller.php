@@ -8,7 +8,7 @@ class Controller{
         $this->view = new View();
     }
 
-    protected function render(string $name, array $data = []){
+    public function render(string $name, array $data = []){
         $this->view->render($name, $data);
     }
 

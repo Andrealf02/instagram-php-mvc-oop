@@ -3,7 +3,8 @@ namespace Andrea\instagram\Controller;
 
 use Andrea\instagram\lib\Controller;
 use Andrea\instagram\lib\UtilImage;
-use Andrea\instagram\lib\Model\User;
+use Andrea\instagram\Model\User;
+
 
 class SignUp extends Controller{
     public function __construct(){
@@ -22,9 +23,9 @@ class SignUp extends Controller{
             $user = new User($username, $pass);
             $user-> setProfile($pictureName);
             $user-> save;
-            header('location : /instagram/login');
+            header('location : /login');
         }else{
-            this->render('error/index');
+            $this->render('error/index');
         }
     }
 }

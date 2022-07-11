@@ -1,7 +1,7 @@
 <?php
 namespace Andrea\instagram\Model;
 
-use Andrea\instagram\Model;
+use Andrea\instagram\lib\Model;
 
 use PDO;
 USE PDOException;
@@ -17,9 +17,11 @@ class User extends Model{
         private string $username,
         private string $pass)
     {
+        //$this-> id = 0;
+        parent:: __construct('');
         $this->post = [];
         $this->profile = "";
-        $this->id = 1;
+        $this->id = -1;
     
     }
 
@@ -33,7 +35,7 @@ class User extends Model{
                 'pass'  => $hash,
                 'profile' =>$this->profile
             ]);
-        }catch(PDOException){
+        }catch(PDOException $e){
             error_log($e->getMessage());
             return false;
         }

@@ -1,5 +1,7 @@
 <?php
 
+use Andrea\instagram\Controller\SignUp;
+
 $router = new \Bramus\Router\Router();
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../config/');
@@ -35,7 +37,7 @@ $router->get('/profile', function(){
 $router->post('/addLike', function(){
     echo "Inicio";
 });
-$router->get('/singout', function(){
+$router->get('/signout', function(){
     echo "Inicio";
 });
 
