@@ -1,6 +1,9 @@
 <?php
 namespace Andrea\instagram\lib;
 
+use PDO;
+use PDOException;
+
 class UtilImage{
     public static function storeImage(array $photo) :string{
         $target_dir = "public/img/photos/";
@@ -8,7 +11,7 @@ class UtilImage{
         $filename = $extarr[sizeof($extarr)-2];
         $ext = $extarr[sizeof($extarr)-1];
         $hash = md5(Date('Ymdgi') . $filename). '.' . $ext;
-        $targer_file = $target_dir . $hash;
+        $target_file = $target_dir . $hash;
         $uploadOk = 1;
 
         if(check === false){
@@ -19,7 +22,7 @@ class UtilImage{
         }
         
         if($uploadOk == 0) {
-            throw new Exception('NO SE SUBIO LA IMG');
+            throw new PDOException('NO SE SUBIO LA IMG');
         }else{
             if(move_uploaded_file($photo["tmp_name"], $target_file)){
                 return $hash;
