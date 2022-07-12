@@ -20,7 +20,7 @@ class Database{
             ];
 
             $pdo = new PDO(
-                $connection,
+                $con,
                 $this->user,
                 $this->pass,
                 $option

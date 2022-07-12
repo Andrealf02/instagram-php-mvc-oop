@@ -4,7 +4,7 @@ namespace Andrea\instagram\Model;
 use Andrea\instagram\lib\Model;
 
 use PDO;
-USE PDOException;
+use PDOException;
 
 class User extends Model{
 
