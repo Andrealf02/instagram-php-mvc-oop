@@ -9,7 +9,7 @@
         <form action="/instagram/auth" method= "POST">
             <input type="text" name="username">
             <input type="text" name="password">
-            <input type="text" value="login">
+            <input type="text" value="Login">
         </form>
     </body>
 </html>

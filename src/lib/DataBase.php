@@ -10,7 +10,7 @@ class Database{
     private string $pass;
     private string $charset;
 
-    public function __construct(){
+    public function connect():PDO{
         try{
             $con = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;
             $option = [

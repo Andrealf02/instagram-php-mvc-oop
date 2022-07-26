@@ -2,6 +2,7 @@
 namespace Andrea\instagram\Model;
 
 use Andrea\instagram\lib\Model;
+use Andrea\instagram\lib\Database;
 
 use PDO;
 use PDOException;
@@ -45,6 +46,47 @@ class User extends Model{
         //algoritmo para conseguir obtener el hash
         //tener en cuenta que cuanto mayor sea el numero del 'cost' las veces que aplique el algoritmo sobre el pass
         return password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
+    }
+
+    public static function exists($username){
+        try{
+            $db = new Database();
+            $query = $db->connect()->prepare('SELECT username FROM users WHERE username = :username');
+            $query->execute( ['username' => $username] );
+
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            error_log($e->getMessage());
+            return false;
+        }
+    }
+
+    public function getUser($username){
+        try{
+            $db = new Database();
+            $query = $db->connect()->prepare('SELECT * FROM users WHERE username = :username');
+            $query->execute( ['username' => $username] );
+
+            $data = $query->fetch(PDO::FETCH_ASSOC);
+
+            $user = new User($data['username'], $data['password']);
+            $user->setId($data['user_id']);
+            $user->setProfile($data['profile']);
+
+            return $user;
+
+        }catch(PDOException $e){
+            error_log($e->getMessage());
+            return false;
+        }
+    }
+
+    public function commparePassword(string $pass):bool{
+        return password_verify($pass, $this->pass);
     }
 
     public function getId(){

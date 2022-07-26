@@ -1,5 +1,6 @@
 <?php
 
+use Andrea\instagram\Controller\Login;
 use Andrea\instagram\Controller\SignUp;
 use Andrea\instagram\Controller\SignUpController;
 use Andrea\instagram\lib\Controller\LoginController;
@@ -21,7 +22,7 @@ $router->get('/login', function(){
     $controller->render('login/index');
 });
 $router->post('/auth', function(){
-    $controller = new Auth;
+    $controller = new Login;
     $controller->auth();
 });
 $router->get('/singnup', function(){

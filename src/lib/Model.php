@@ -1,6 +1,8 @@
 <?php
 namespace Andrea\instagram\lib;
 
+use Andrea\instagram\lib\Database;
+
 class Model{
     private $db;
 
