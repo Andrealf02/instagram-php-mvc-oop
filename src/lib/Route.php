@@ -1,6 +1,10 @@
 <?php
 
 use Andrea\instagram\Controller\SignUp;
+use Andrea\instagram\Controller\SignUpController;
+use Andrea\instagram\lib\Controller\LoginController;
+use Andrea\instagram\lib\Database;
+
 
 $router = new \Bramus\Router\Router();
 
@@ -13,17 +17,20 @@ $router->get('/', function(){
     
 });
 $router->get('/login', function(){
-    echo "Login";
+    $controller = new Login;
+    $controller->render('login/index');
 });
 $router->post('/auth', function(){
-    echo "Inicio";
+    $controller = new Auth;
+    $controller->auth();
 });
 $router->get('/singnup', function(){
     $controller = new SignUp;
     $controller->render('signup/index');
 });
 $router->post('/register', function(){
-    echo "Inicio";
+    $controller = new SignUp;
+    $controller->registrer();
 });
 $router->get('/home', function(){
     echo "Inicio";

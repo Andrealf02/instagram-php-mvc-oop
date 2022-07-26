@@ -6,11 +6,10 @@
         <title>Doc</title>
     </head>
     <body>
-        <form action="">
+        <form action="/instagram/auth" method= "POST">
             <input type="text" name="username">
             <input type="text" name="password">
-            <input type="text" name="profile">
-            <input type="text" value="Crear Cuentas">
+            <input type="text" value="login">
         </form>
     </body>
 </html>

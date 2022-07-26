@@ -42,7 +42,7 @@ class User extends Model{
     }
 
     private function getHashedPassword($pass){
-        //algoritmo para conseguir optener el hash
+        //algoritmo para conseguir obtener el hash
         //tener en cuenta que cuanto mayor sea el numero del 'cost' las veces que aplique el algoritmo sobre el pass
         return password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
     }
@@ -53,4 +53,6 @@ class User extends Model{
     public function setId($value){
          $this->id = $value;
     }
+
+
 }
