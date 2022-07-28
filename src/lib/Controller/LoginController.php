@@ -19,9 +19,9 @@ class Login extends Controller{
             if(!is_null($username)&& !is_null($password)){
                 if(User::exists($username)){
 
-                    $user = User::getUser($username);
+                    $user = User::get($username);
 
-                    if($user->comparePassword($password)){
+                    if($user->commparePassword($password)){
                         //serialize (objeto en un elemento que puedo guardar)
                         $_SESSION['user'] = serialize($user);
                         error_log('the user logged in');
